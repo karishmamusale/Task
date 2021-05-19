@@ -1,0 +1,40 @@
+@media (min-width:997px){
+.btn-login
+{
+    background: #3078A6 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    top: 476px;
+    left: 146px;
+    width: 407px;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+}
+.input
+{
+    width: 407px;
+}
+/*.login-form
+{
+	margin-left: 30px;
+}*/
+}
+@media (min-width: 330px) and (max-width: 991px)
+{
+	.box
+	{
+		width: 330px;
+    	height: 50px;
+	}
+}
+@media (max-width: 991px)
+{
+.sm-margin-30px-bottom {
+    margin-bottom: 30px !important;
+}
+.sm-text-center
+{
+	text-align: center;
+}
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to the iFlex Final Web Link</title>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  	<meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="images/fav.png">
+     <!-- bootstrap v3.3.7 css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <!-- font-awesome css -->
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
+       <link rel="stylesheet" type="text/css" href="style.css">
+       <link rel="stylesheet" type="text/css" href="responsive.css">
+       <link rel="stylesheet" type="text/css" href="css/all.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="js/jquery.js"></script>
+<!-- jquery latest version -->
+        <script src="js/jquery.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+	<section class="pt-5 pb-5">
+		<div class="container">
+			<div class="row rs-vertical-middle no-gutters" style="box-shadow: 0 1px 1px 2px #ddd;">
+				<div class="col-md-6">
+					<div class="leftside">
+						<div class="login-form pt-3">
+							<div class="logo">
+							<h1>Swadesh Logo</h1>
+							</div>
+							<h2 class="pt-4 pb-4"><span>L</span>og In</h2>
+							<form class="" id="loginForm" action="register.html" method="post" accept-charset="utf-8">
+							  <div class="form-group pb-2">
+							     <div class="box">
+									<input type="text" name="" required="required" class="in" placeholder="" id="email" autocomplete="off">
+									<span class="user">Your Email</span>
+									<i class="fa fa-close"></i>
+								</div>
+							  </div>
+							  <div class="form-group">
+							    <div class="box">
+									<input type="password" name="" required="required" class="in" placeholder="" id="password">
+									<span class="user">Password</span>
+									<i class="fa fa-eye"></i>
+								</div>
+							  </div>
+							  <div class="form-group form-check">
+							    <div class="" style="width: 390px;">
+							    	<label class="form-check-label">
+							      <input class="form-check-input" type="checkbox"> Remember me
+							    </label>
+							    <a href="forget-password.html" class="pull-right">Forget Password ?</a>
+							    </div>
+							  </div>
+							  <div class="pt-2">
+							  	<a  type="submit" class="btn-login text-white" name=>Log In</a>
+							  </div>
+							</form>
+						</div>	
+						<div class="text-center pt-2">
+							<p>Don't have an account? <a href="register.html" class="text-center">Register</a> </p>
+							<p> -- Or login using -- </p>
+						</div>
+						<div class="social-icons">
+							<ul>
+								<li><a href="#"><img src="images/icons/facebook-logo.png" class="img-fluid"></a></li>
+								<li><a href="#"><img src="images/icons/google-icon.png" class="img-fluid"></a></li>
+							</ul>
+						</div>
+					
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="rightside">
+						<img src="images/bg.jpg" class="img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<script type="text/javascript">
+		$('#loginForm').submit(function(event)
+		{
+			event.preventDefault();
+			$.ajax({
+				type:"POST",
+				url:"159.65.145.170/iflex/index.php/GeneralServices/login",
+				data:({
+					email : $('#email').val(),
+					password: $('#password').val()
+				}),
+				success:function(result)
+				{
+					if(result=='ok')
+					{
+						alert('Timeout for otp');
+					}
+					else
+					{
+						$('#result').empty().addClass('error').append('Something is wrong');
+					}
+				}
+			});
+			return false;
+		})
+
+	</script>
+
+	 
+</body>
+</html>
